@@ -29,8 +29,8 @@ let displayMedia = function (media){
                     Rating: ${media.rating}
                 </div>
                 <div class="details-button">
-                    <button>Edit</button>
-                    <button>Remove</button>
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-remove">Remove</button>
                 </div>
             </div>
         </div>
@@ -64,16 +64,21 @@ let addMedia = function (media){
                     Rating: ${media.rating}
                 </div>
                 <div class="details-button">
-                    <button>Edit</button>
-                    <button>Remove</button>
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-remove">Remove</button>
                 </div>
             </div>
         </div>
     `
 }
 
-let removeMedia = function (media){
-
+let removeMedia = function (){
+    document.querySelectorAll(".btn-remove").forEach(remove => {
+        remove.onclick = () => {
+            console.log(remove.parentNode.parentNode.parentNode)
+            document.querySelector("#product-list").removeChild(remove.parentNode.parentNode.parentNode)
+        }
+    })
 }
 
 let getNbMedias= function (){
@@ -91,13 +96,16 @@ let init = function (){
         buildProductsList(filter(event.target.value))
     })
     buildProductsList(medias)
+
+    removeMedia()
 }
 
 export default {
     medias: medias,
     init: init,
-    addMedia: addMedia,
     filter: filter,
+    addMedia: addMedia,
+    removeMedia: removeMedia,
     buildProductsList: buildProductsList,
 }
 
