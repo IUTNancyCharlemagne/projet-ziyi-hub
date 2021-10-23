@@ -75,7 +75,7 @@ let addMedia = function (media){
 let removeMedia = function (){
     document.querySelectorAll(".btn-remove").forEach(remove => {
         remove.onclick = () => {
-            console.log(remove.parentNode.parentNode.parentNode)
+            //console.log(remove.parentNode.parentNode.parentNode)
             document.querySelector("#product-list").removeChild(remove.parentNode.parentNode.parentNode)
         }
     })
@@ -91,13 +91,39 @@ let filter = function (keywords){
     })
 }
 
+let visible = false;
+function show(){
+    document.querySelector('#window-edit').style.display = "block"
+    document.querySelector('#window-edit').style.position = "absolute"
+    visible=true
+}
+
+function hide(){
+    document.querySelector('#window-edit').style.display = "none"
+    visible=false
+}
+
+function getEdit(){
+    document.querySelectorAll(".btn-edit").forEach(edit => {
+        edit.addEventListener('click', () => {
+            if(visible){
+                hide()
+            }else {
+                show()
+            }
+        })
+    })
+    document.querySelector(".close").addEventListener('click', hide)
+}
+
 let init = function (){
     document.querySelector('#product-search').addEventListener('keyup', (event)=>{
         buildProductsList(filter(event.target.value))
     })
     buildProductsList(medias)
-
     removeMedia()
+    getEdit()
+
 }
 
 export default {

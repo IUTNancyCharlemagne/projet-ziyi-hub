@@ -91,3 +91,29 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+#window-edit{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    padding: 30px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+}
+
+#edit-head {
+    height: 13%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: floralwhite;
+}
+
+#edit-contenu {
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    position:relative;
+    background-color: white;
+}
