@@ -92,7 +92,7 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-#window-edit{
+#window-edit, #window-add{
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
@@ -103,14 +103,14 @@ main {
     left: 0;
 }
 
-#edit-head {
+#edit-head, #add-head{
     height: 13%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     color: floralwhite;
 }
 
-#edit-contenu {
+#edit-contenu, #add-contenu {
     left: 25%;
     width: 50%;
     height: 50%;

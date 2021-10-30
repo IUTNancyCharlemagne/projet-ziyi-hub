@@ -1,8 +1,8 @@
 import Media from "./Media.js"
 
 const media1 = new Media("Organize office", "2021-10-28", 5, "http://placeimg.com/250/250/tech/grayscale")
-const media2 = new Media("Pay bills", "2021-11-18", 5, "http://placeimg.com/250/250/nature/grayscale")
-const media3 = new Media("Meet George", "2021-12-01", 5, "http://placeimg.com/250/250/arch/grayscale")
+const media2 = new Media("Pay bills", "2020-11-18", 5, "http://placeimg.com/250/250/nature/grayscale")
+const media3 = new Media("Meet George", "2022-12-01", 5, "http://placeimg.com/250/250/arch/grayscale")
 
 
 let medias = [
@@ -46,6 +46,30 @@ let buildProductsList = function (medias){
 }
 
 
+let visible2 = false;
+function showAdd(){
+    document.querySelector('#window-add').style.display = "block"
+    document.querySelector('#window-add').style.position = "absolute"
+    visible2=true
+}
+
+function hideAdd(){
+    document.querySelector('#window-add').style.display = "none"
+    visible2=false
+}
+
+let addMedia = function (){
+    document.querySelector("#btn-add").addEventListener('click', () => {
+        if(visible2){
+            hideAdd()
+        }else {
+            showAdd()
+        }
+    })
+    document.querySelector(".close2").addEventListener('click', hideAdd)
+}
+
+/*
 let addMedia = function (media){
     document.querySelector("#product-list").innerHTML += `
         <div class="product">
@@ -71,7 +95,7 @@ let addMedia = function (media){
         </div>
     `
 }
-
+*/
 let removeMedia = function (){
     document.querySelectorAll(".btn-remove").forEach(remove => {
         remove.onclick = () => {
@@ -123,6 +147,7 @@ let init = function (){
     buildProductsList(medias)
     removeMedia()
     getEdit()
+    addMedia()
 
 }
 
