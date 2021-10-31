@@ -113,7 +113,31 @@ let getNbMedias= function (){
 
 }
 
-let filter = function (keywords){
+let filterAll= function (){
+    return medias.filter(media => {
+        return (media instanceof Media)
+    })
+}
+
+let filterAlbum= function (){
+    return medias.filter(media => {
+        return (media instanceof Album)
+    })
+}
+
+let filterGame= function (){
+    return medias.filter(media => {
+        return (media instanceof Game)
+    })
+}
+
+let filterMovie= function (){
+    return medias.filter(media => {
+        return (media instanceof Movie)
+    })
+}
+
+let filterCollection = function (keywords){
     return medias.filter(media => {
         return (media.title.indexOf(keywords) !== -1) || (media.releaseDate.indexOf(keywords) !== -1)
     })
@@ -146,7 +170,7 @@ function getEdit(){
 
 let init = function (){
     document.querySelector('#product-search').addEventListener('keyup', (event)=>{
-        buildProductsList(filter(event.target.value))
+        buildProductsList(filterCollection(event.target.value))
         getEdit()
         removeMedia()
     })
@@ -167,7 +191,12 @@ let init = function (){
 export default {
     medias: medias,
     init: init,
-    filter: filter,
+    filterAll: filterAll,
+    getEdit: getEdit,
+    filterAlbum: filterAlbum,
+    filterGame: filterGame,
+    filterMovie: filterMovie,
+    filterCollection: filterCollection,
     getForm: getForm,
     removeMedia: removeMedia,
     buildProductsList: buildProductsList,
