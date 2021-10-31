@@ -3,7 +3,7 @@
 import test from 'ava';
 import Movie from "../../src/models/Movie.js";
 
-const movie = new Movie("Redisent Evil", "2016-12-01", 5, "http://placeimg.com/250/250/arch/grayscale", "James", "Edda", "110 min", "plot")
+const movie = new Movie("Redisent Evil", "2016-12-01", 5, "http://placeimg.com/250/250/arch/grayscale", "James", "Edda", "1:40:37", "plot")
 
 /**
  * test1 unitaire de title de la classe Movie

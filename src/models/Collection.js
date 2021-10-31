@@ -1,14 +1,17 @@
 import Media from "./Media.js"
+import Movie from "./Movie.js";
 
-const media1 = new Media("Organize office", "2021-10-28", 5, "http://placeimg.com/250/250/tech/grayscale")
-const media2 = new Media("Pay bills", "2020-11-18", 5, "http://placeimg.com/250/250/nature/grayscale")
-const media3 = new Media("Meet George", "2022-12-01", 5, "http://placeimg.com/250/250/arch/grayscale")
+const media1 = new Media("Organize office", "2021-10-28", 5, "http://placeimg.com/250/250/tech")
+const media2 = new Media("Pay bills", "2020-11-18", 3, "http://placeimg.com/250/250/nature")
+const media3 = new Media("Meet George", "2021-08-13", 2, "http://placeimg.com/250/250/arch")
+const media4 = new Movie("Resident Evil 7", "2016-07-24", 4, "http://placeimg.com/250/250/animals", "Capcom", "Milla Jovovich", "1:40:37", "In September 1998, Raccoon City becomes overrun with zombies after the T-virus contaminates its water supply, infecting much of its population.")
 
 
 let medias = [
     media1,
     media2,
     media3,
+    media4,
 ]
 
 let displayMedia = function (media){
