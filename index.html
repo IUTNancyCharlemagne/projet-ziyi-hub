@@ -95,7 +95,7 @@
                     <div class="edit-type"></div>
                     <div class="edit-general">
                         Title <input type="text" placeholder="Zelda BOTW" />
-                        Released date <input type="text" placeholder="03/03/2017" />
+                        Released date <input type="date" placeholder="03/03/2017" />
                         Rating
                         Image <input type="url" placeholder="mysite.com" />
                     </div>
@@ -105,7 +105,7 @@
                         Plot <button value="Your princess is in another"></button>
                     </div>
                     <button>Cancel</button>
-                    <button>Add</button>
+                    <button>Enregistrer</button>
                 </div>
             </div>
 
@@ -117,18 +117,14 @@
                     <h4>Add media</h4>
                     <div class="add-type"></div>
                     <div class="add-general">
-                        Title <input type="text" placeholder="Zelda BOTW" />
-                        Released date <input type="text" placeholder="03/03/2017" />
-                        Rating
-                        Image <input type="url" placeholder="mysite.com" />
+                        Title <input type="text" id="add-title" placeholder="Zelda BOTW" required>
+                        Released date <input type="date" id="add-date" placeholder="03/03/2017" required>
+                        Rating <input type="text" id="add-rating" placeholder="5" required>
+                        Image <input type="url" id="add-img" placeholder="mysite.com" required>
                     </div>
-                    <div class="add-specific">
-                        Studio <input type="text" placeholder="Nintendo" />
-                        Number of players <input type="text" placeholder="1" />
-                        Plot <button value="Your princess is in another"></button>
-                    </div>
+                    <div class="add-specific"></div>
                     <button>Cancel</button>
-                    <button>Add</button>
+                    <button id="add-contenu-btn">Add</button>
                 </div>
             </div>
         </section>

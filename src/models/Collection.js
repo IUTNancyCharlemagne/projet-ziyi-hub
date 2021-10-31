@@ -58,7 +58,7 @@ function hideAdd(){
     visible2=false
 }
 
-let addMedia = function (){
+let getForm = function (){
     document.querySelector("#btn-add").addEventListener('click', () => {
         if(visible2){
             hideAdd()
@@ -69,7 +69,7 @@ let addMedia = function (){
     document.querySelector(".close2").addEventListener('click', hideAdd)
 }
 
-/*
+
 let addMedia = function (media){
     document.querySelector("#product-list").innerHTML += `
         <div class="product">
@@ -94,8 +94,10 @@ let addMedia = function (media){
             </div>
         </div>
     `
+    removeMedia()
+    getEdit()
 }
-*/
+
 let removeMedia = function (){
     document.querySelectorAll(".btn-remove").forEach(remove => {
         remove.onclick = () => {
@@ -147,15 +149,22 @@ let init = function (){
     buildProductsList(medias)
     removeMedia()
     getEdit()
-    addMedia()
-
+    getForm()
+    document.querySelector("#add-contenu-btn").addEventListener("click", ()=>{
+        let title = document.querySelector("#add-title").value
+        let releaseDate = document.querySelector("#add-date").value
+        let rating = document.querySelector("#add-rating").value
+        let image = document.querySelector("#add-img").value
+        let media = new Media(title, releaseDate, rating, image)
+        addMedia(media)
+    })
 }
 
 export default {
     medias: medias,
     init: init,
     filter: filter,
-    addMedia: addMedia,
+    getForm: getForm,
     removeMedia: removeMedia,
     buildProductsList: buildProductsList,
 }
