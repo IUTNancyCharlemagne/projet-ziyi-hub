@@ -7,7 +7,6 @@ const media1 = new Album("Organize office", "2021-10-28", 5, "http://placeimg.co
 const media2 = new Game("Pay bills", "2020-11-18", 3, "http://placeimg.com/250/250/nature", "studio", 2, "plot")
 const media3 = new Movie("Resident Evil 7", "2016-07-24", 4, "http://placeimg.com/250/250/arch", "Capcom", "Milla Jovovich", "1:40:37", "In September 1998, Raccoon City becomes overrun with zombies after the T-virus contaminates its water supply, infecting much of its population.")
 
-
 let medias = [
     media1,
     media2,
@@ -18,7 +17,7 @@ let displayMedia = function (media){
     return `
         <div class="product">
             <div class="photo">
-                <span class="mdi mdi-camera" style="background-image: url(${media.image});width: 250px;height: 250px;"></span>
+                <span class="mdi mdi-camera" style="background-image: url(${media.image}); width: 250px; height: 250px;"></span>
             </div>
             <div class="details">
                 <div class="details-top">
