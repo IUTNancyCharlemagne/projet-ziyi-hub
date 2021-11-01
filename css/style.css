@@ -116,4 +116,5 @@ main {
     height: 50%;
     position:relative;
     background-color: white;
+    overflow: scroll;
 }

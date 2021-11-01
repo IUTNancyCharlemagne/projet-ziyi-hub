@@ -102,7 +102,7 @@
                     <div class="edit-specific">
                         Studio <input type="text" placeholder="Nintendo" />
                         Number of players <input type="text" placeholder="1" />
-                        Plot <button value="Your princess is in another"></button>
+                        Plot <input type="text" placeholder="Your princess is in another" />
                     </div>
                     <button>Cancel</button>
                     <button>Enregistrer</button>
@@ -115,14 +115,26 @@
                 </div>
                 <div id="add-contenu">
                     <h4>Add media</h4>
-                    <div class="add-type"></div>
-                    <div class="add-general">
-                        Title <input type="text" id="add-title" placeholder="Zelda BOTW" required>
-                        Released date <input type="date" id="add-date" placeholder="03/03/2017" required>
-                        Rating <input type="text" id="add-rating" placeholder="5" required>
-                        Image <input type="url" id="add-img" placeholder="mysite.com" required>
+                    <div class="add-type">
+                        Type
+                        <select id="add-select">
+                            <option value="option-album">Album</option>
+                            <option value="option-game">Game</option>
+                            <option value="option-movie">Movie</option>
+                        </select>
                     </div>
-                    <div class="add-specific"></div>
+                    -----GENERAL-----
+                    <div class="add-general">
+                        <p>Title <input type="text" id="add-title" placeholder="Zelda BOTW" required></p>
+                        <p>Released date <input type="date" id="add-date" placeholder="03/03/2017" required></p>
+                        <p>Rating <input type="text" id="add-rating" placeholder="5" required></p>
+                        <p>Image <input type="url" id="add-img" placeholder="mysite.com" required></p>
+                    </div>
+                    -----SPECIFIC-----
+                    <div class="add-specific">
+                        <p>Artists <input type="text" placeholder="Nintendo" /></p>
+                        <p>nbTracks <input type="text" placeholder="5" /></p>
+                    </div>
                     <button>Cancel</button>
                     <button id="add-contenu-btn">Add</button>
                 </div>

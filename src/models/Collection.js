@@ -40,6 +40,31 @@ let displayMedia = function (media){
 }
 
 
+let displaySpecific = function (){
+    let select = document.querySelector("#add-select")
+    let option = select.options[select.selectedIndex].value;
+    if (option === "option-game"){
+        document.querySelector(".add-specific").innerHTML = `
+            <p>Studio <input type="text" placeholder="Nintendo" /></p>
+            <p>Number of players <input type="text" placeholder="1" /></p>
+            <p>Plot <input type="text" placeholder="Your princess is in another" /></p>
+        `
+    }else if (option === "option-movie"){
+        document.querySelector(".add-specific").innerHTML = `
+            <p>Director <input type="text" placeholder="James" /></p>
+            <p>Actors <input type="text" placeholder="Milla Jovovich" /></p>
+            <p>Duration <input type="text" placeholder="1:40:37" /></p>
+            <p>Plot <input type="text" placeholder="Your princess is in another" /></p>
+        `
+    }else if (option === "option-album"){
+        document.querySelector(".add-specific").innerHTML = `
+            <p>Artists <input type="text" placeholder="Nintendo" /></p>
+            <p>nbTracks <input type="text" placeholder="5" /></p>
+        `
+    }
+}
+
+
 let buildProductsList = function (medias){
     const pList = document.querySelector('#product-list');
     pList.innerHTML = '';
@@ -185,6 +210,7 @@ let load = function () {
 }
 
 let init = function (){
+    document.querySelector("#add-select").addEventListener("change", displaySpecific)
     document.querySelector('#product-search').addEventListener('keyup', (event)=>{
         buildProductsList(filterCollection(event.target.value))
         getEdit()
