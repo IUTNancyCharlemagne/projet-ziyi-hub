@@ -39,8 +39,9 @@ let displayMedia = function (media){
     `
 }
 
-const pList = document.querySelector('#product-list');
+
 let buildProductsList = function (medias){
+    const pList = document.querySelector('#product-list');
     pList.innerHTML = '';
     medias.forEach(media => {
         pList.innerHTML += displayMedia(media);
