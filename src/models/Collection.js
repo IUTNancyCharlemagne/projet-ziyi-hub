@@ -97,6 +97,8 @@ let addMedia = function (media){
             </div>
         </div>
     `
+    medias.push(media)
+    save()
     removeMedia()
     getEdit()
 }
@@ -167,6 +169,19 @@ function getEdit(){
         })
     })
     document.querySelector(".close").addEventListener('click', hide)
+}
+
+let save = function (){
+    localStorage.removeItem('medias');
+    localStorage.setItem('medias', JSON.stringify(medias));
+}
+
+
+let load = function () {
+    let tmp = JSON.parse(localStorage.getItem('medias'));
+    if (tmp){
+        medias = tmp;
+    }
 }
 
 let init = function (){
