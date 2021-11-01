@@ -14,7 +14,8 @@ let medias = [
 ]
 
 let displayMedia = function (media){
-    return `
+    if (media instanceof Game || media instanceof Movie){
+        return `
         <div class="product">
             <div class="photo">
                 <span class="mdi mdi-camera" style="background-image: url(${media.image}); width: 250px; height: 250px; background-size: cover;"></span>
@@ -24,10 +25,10 @@ let displayMedia = function (media){
                     <strong class="bigger" data-type="title">${media.title}</strong>
                     <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
-                <div class="details-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <div class="details-description details-plot">
+                    ${media.plot}
                 </div>
-                <div class="details-description">
+                <div class="details-description details-rating">
                     Rating: ${media.rating}
                 </div>
                 <div class="details-button">
@@ -37,6 +38,31 @@ let displayMedia = function (media){
             </div>
         </div>
     `
+    }else{
+        return `
+        <div class="product">
+            <div class="photo">
+                <span class="mdi mdi-camera" style="background-image: url(${media.image}); width: 250px; height: 250px; background-size: cover;"></span>
+            </div>
+            <div class="details">
+                <div class="details-top">
+                    <strong class="bigger" data-type="title">${media.title}</strong>
+                    <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
+                </div>
+                <div class="details-description details-plot">
+                    By ${media.artists}, contains ${media.nbTracks} tracks.
+                </div>
+                <div class="details-description details-rating">
+                    Rating: ${media.rating}
+                </div>
+                <div class="details-button">
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-remove">Remove</button>
+                </div>
+            </div>
+        </div>
+    `
+    }
 }
 
 

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    font-family: Arial, serif;
 }
 
 main {
@@ -82,14 +82,41 @@ main {
     text-align: justify;
 }
 
-.product-add2cart{
-    border: 2px solid black;
+.mdi-magnify{
+    max-height: 42px;
+}
+
+#product-list{
+    border: 2px solid #DEDEDE;
+}
+
+#btn-add{
+    margin-left: 40%;
+}
+
+.details{
+    display: grid;
+    grid-template-rows: 1.5fr 2.5fr 0.5fr 0.5fr;
 }
 
 .details-button{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.product-add2cart{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+}
+
+.product-add2cart:hover{
+    border-bottom: 2px solid black;
+}
+
+.details-plot{
+    border-bottom: 1px solid #efeeee;
 }
 
 #window-edit, #window-add{
@@ -104,9 +131,8 @@ main {
 }
 
 #edit-head, #add-head{
-    height: 13%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    height: fit-content;
+    width: fit-content;
     color: floralwhite;
 }
 
