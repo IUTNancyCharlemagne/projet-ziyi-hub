@@ -43,23 +43,24 @@ let displayMedia = function (media){
 let displaySpecific = function (){
     let select = document.querySelector("#add-select")
     let option = select.options[select.selectedIndex].value;
+
     if (option === "option-game"){
         document.querySelector(".add-specific").innerHTML = `
-            <p>Studio <input type="text" placeholder="Nintendo" /></p>
-            <p>Number of players <input type="text" placeholder="1" /></p>
-            <p>Plot <input type="text" placeholder="Your princess is in another" /></p>
+            <p>Studio <input type="text" id="add-studio" placeholder="Nintendo" /></p>
+            <p>Number of players <input type="text" id="add-nbPlayers" placeholder="1" /></p>
+            <p>Plot <input type="text" id="add-plot" placeholder="Your princess is in another" /></p>
         `
     }else if (option === "option-movie"){
         document.querySelector(".add-specific").innerHTML = `
-            <p>Director <input type="text" placeholder="James" /></p>
-            <p>Actors <input type="text" placeholder="Milla Jovovich" /></p>
-            <p>Duration <input type="text" placeholder="1:40:37" /></p>
-            <p>Plot <input type="text" placeholder="Your princess is in another" /></p>
+            <p>Director <input type="text" id="add-director" placeholder="James" /></p>
+            <p>Actors <input type="text" id="add-actors" placeholder="Milla Jovovich" /></p>
+            <p>Duration <input type="text" id="add-duration" placeholder="1:40:37" /></p>
+            <p>Plot <input type="text" id="add-movie-plot" placeholder="Your princess is in another" /></p>
         `
     }else if (option === "option-album"){
         document.querySelector(".add-specific").innerHTML = `
-            <p>Artists <input type="text" placeholder="Nintendo" /></p>
-            <p>nbTracks <input type="text" placeholder="5" /></p>
+            <p>Artists <input type="text" id="add-artists" placeholder="Nintendo" /></p>
+            <p>nbTracks <input type="text" id="add-nbTracks" placeholder="5" /></p>
         `
     }
 }
@@ -131,7 +132,6 @@ let addMedia = function (media){
 let removeMedia = function (){
     document.querySelectorAll(".btn-remove").forEach(remove => {
         remove.onclick = () => {
-            //console.log(remove.parentNode.parentNode.parentNode)
             document.querySelector("#product-list").removeChild(remove.parentNode.parentNode.parentNode)
         }
     })
@@ -216,17 +216,41 @@ let init = function (){
         getEdit()
         removeMedia()
     })
+
     buildProductsList(medias)
     removeMedia()
     getEdit()
     getForm()
+
     document.querySelector("#add-contenu-btn").addEventListener("click", ()=>{
         let title = document.querySelector("#add-title").value
         let releaseDate = document.querySelector("#add-date").value
         let rating = document.querySelector("#add-rating").value
         let image = document.querySelector("#add-img").value
-        let media = new Media(title, releaseDate, rating, image)
-        addMedia(media)
+        let select = document.querySelector("#add-select")
+        let option = select.options[select.selectedIndex].value;
+
+        if (option === "option-game"){
+            let studio = document.querySelector("#add-studio").value
+            let nbPlayers = document.querySelector("#add-nbPlayers").value
+            let plot = document.querySelector("#add-plot").value
+            let game = new Game(title, releaseDate, rating, image, studio, nbPlayers, plot)
+            addMedia(game)
+
+        }else if (option === "option-movie"){
+            let director = document.querySelector("#add-director").value
+            let actors = document.querySelector("#add-actors").value
+            let duration = document.querySelector("#add-duration").value
+            let p = document.querySelector("#add-movie-plot").value
+            let movie = new Movie(title, releaseDate, rating, image, director, actors, duration, p)
+            addMedia(movie)
+
+        }else if (option === "option-album"){
+            let artists = document.querySelector("#add-artists").value
+            let nbTracks = document.querySelector("#add-nbTracks").value
+            let album = new Album(title, releaseDate, rating, image, artists, nbTracks)
+            addMedia(album)
+        }
     })
 }
 
