@@ -126,7 +126,8 @@ let getForm = function (){
 
 
 let addMedia = function (media){
-    document.querySelector("#product-list").innerHTML += `
+    if ((media instanceof Game) || (media instanceof Movie)){
+        document.querySelector("#product-list").innerHTML += `
         <div class="product">
             <div class="photo">
                 <span class="mdi mdi-camera" style="background-image: url(${media.image});width: 250px;height: 250px;"></span>
@@ -137,7 +138,7 @@ let addMedia = function (media){
                     <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
                 <div class="details-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                ${media.plot}
                 </div>
                 <div class="details-description">
                     Rating: ${media.rating}
@@ -149,6 +150,32 @@ let addMedia = function (media){
             </div>
         </div>
     `
+    }else if (media instanceof Album){
+        document.querySelector("#product-list").innerHTML += `
+        <div class="product">
+            <div class="photo">
+                <span class="mdi mdi-camera" style="background-image: url(${media.image});width: 250px;height: 250px;"></span>
+            </div>
+            <div class="details">
+                <div class="details-top">
+                    <strong class="bigger" data-type="title">${media.title}</strong>
+                    <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
+                </div>
+                <div class="details-description">
+                By ${media.artists}, contains ${media.nbTracks} tracks.
+                </div>
+                <div class="details-description">
+                    Rating: ${media.rating}
+                </div>
+                <div class="details-button">
+                    <button class="btn-edit">Edit</button>
+                    <button class="btn-remove">Remove</button>
+                </div>
+            </div>
+        </div>
+    `
+    }
+
     medias.push(media)
     save()
     removeMedia()
