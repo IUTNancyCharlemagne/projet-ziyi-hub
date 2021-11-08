@@ -137,10 +137,10 @@ let addMedia = function (media){
                     <strong class="bigger" data-type="title">${media.title}</strong>
                     <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
-                <div class="details-description">
+                <div class="details-description details-plot">
                 ${media.plot}
                 </div>
-                <div class="details-description">
+                <div class="details-description details-rating">
                     Rating: ${media.rating}
                 </div>
                 <div class="details-button">
@@ -161,10 +161,10 @@ let addMedia = function (media){
                     <strong class="bigger" data-type="title">${media.title}</strong>
                     <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
-                <div class="details-description">
+                <div class="details-description details-plot">
                 By ${media.artists}, contains ${media.nbTracks} tracks.
                 </div>
-                <div class="details-description">
+                <div class="details-description details-rating">
                     Rating: ${media.rating}
                 </div>
                 <div class="details-button">
@@ -269,7 +269,7 @@ let init = function (){
         getEdit()
         removeMedia()
     })
-
+    //load()
     buildProductsList(medias)
     removeMedia()
     getEdit()
