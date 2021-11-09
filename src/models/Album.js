@@ -4,6 +4,7 @@ class Album extends Media{
         super(title, releaseDate, rating, image)
         this.artists = artists
         this.nbTracks = nbTracks
+        this.length = 6
     }
 }
 

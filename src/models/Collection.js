@@ -14,7 +14,7 @@ let medias = [
 ]
 
 let displayMedia = function (media){
-    if (media instanceof Game || media instanceof Movie){
+    if (media.length === 7 || media.length === 8){
         return `
         <div class="product">
             <div class="photo">
@@ -126,7 +126,7 @@ let getForm = function (){
 
 
 let addMedia = function (media){
-    if ((media instanceof Game) || (media instanceof Movie)){
+    if ((media.length === 7) || (media.length === 8)){
         document.querySelector("#product-list").innerHTML += `
         <div class="product">
             <div class="photo">
@@ -150,7 +150,7 @@ let addMedia = function (media){
             </div>
         </div>
     `
-    }else if (media instanceof Album){
+    }else{
         document.querySelector("#product-list").innerHTML += `
         <div class="product">
             <div class="photo">
@@ -196,25 +196,28 @@ let getNbMedias= function (){
 
 let filterAll= function (){
     return medias.filter(media => {
-        return (media instanceof Media)
+        return (media instanceof Object)
     })
 }
 
 let filterAlbum= function (){
     return medias.filter(media => {
-        return (media instanceof Album)
+        //return (media instanceof Album)
+        return (media.length === 6)
     })
 }
 
 let filterGame= function (){
     return medias.filter(media => {
-        return (media instanceof Game)
+        //return (media instanceof Game)
+        return (media.length === 7)
     })
 }
 
 let filterMovie= function (){
     return medias.filter(media => {
-        return (media instanceof Movie)
+        //return (media instanceof Movie)
+        return (media.length === 8)
     })
 }
 
@@ -269,7 +272,7 @@ let init = function (){
         getEdit()
         removeMedia()
     })
-    //load()
+    load()
     buildProductsList(medias)
     removeMedia()
     getEdit()

@@ -6,6 +6,7 @@ class Movie extends Media{
         this.actors = actors
         this.duration = duration
         this.plot = plot
+        this.length = 8
     }
 }
 

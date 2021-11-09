@@ -5,6 +5,7 @@ class Game extends Media{
         this.studio = studio
         this.nbPlayers = nbPlayers
         this.plot = plot
+        this.length = 7
     }
 }
 export default Game
