@@ -124,6 +124,14 @@ let getForm = function (){
     document.querySelector(".close2").addEventListener('click', hideAdd)
 }
 
+let CancelForm = function (){
+    document.querySelector("#add-cancel-btn").addEventListener('click', () => {
+        if(visible2){
+            hideAdd()
+        }
+    })
+}
+
 
 let addMedia = function (media){
     if ((media.length === 7) || (media.length === 8)){
@@ -279,6 +287,7 @@ let init = function (){
     removeMedia()
     getEdit()
     getForm()
+    CancelForm()
 
     document.querySelector("#add-contenu-btn").addEventListener("click", ()=>{
         let title = document.querySelector("#add-title").value
