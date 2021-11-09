@@ -180,6 +180,7 @@ let addMedia = function (media){
     save()
     removeMedia()
     getEdit()
+    getNbMedias()
 }
 
 let removeMedia = function (){
@@ -191,7 +192,7 @@ let removeMedia = function (){
 }
 
 let getNbMedias= function (){
-
+    document.querySelector(".nbMedia").innerHTML = "Nombre total de médias: " + medias.length;
 }
 
 let filterAll= function (){
@@ -273,6 +274,7 @@ let init = function (){
         removeMedia()
     })
     load()
+    getNbMedias()
     buildProductsList(medias)
     removeMedia()
     getEdit()

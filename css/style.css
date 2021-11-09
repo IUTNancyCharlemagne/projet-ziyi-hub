@@ -83,15 +83,11 @@ main {
 }
 
 .mdi-magnify{
-    max-height: 42px;
+    max-height: 45px;
 }
 
 #product-list{
     border: 2px solid #DEDEDE;
-}
-
-#btn-add{
-    margin-left: 35%;
 }
 
 .details{
@@ -105,10 +101,14 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-.product-add2cart{
+.product-add2cart, .nbMedia{
     width: 100px;
     height: 40px;
     padding: 10px;
+}
+
+.nbMedia{
+    margin-left: 25%;
 }
 
 .product-add2cart:hover{
