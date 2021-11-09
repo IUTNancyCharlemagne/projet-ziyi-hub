@@ -289,6 +289,30 @@ let init = function (){
     getForm()
     CancelForm()
 
+    document.querySelector("#filtrer-all").addEventListener("click", ()=>{
+        buildProductsList(filterAll())
+        getEdit()
+        removeMedia()
+    })
+
+    document.querySelector("#filtrer-album").addEventListener("click", ()=>{
+        buildProductsList(filterAlbum())
+        getEdit()
+        removeMedia()
+    })
+
+    document.querySelector("#filtrer-game").addEventListener("click", ()=>{
+        buildProductsList(filterGame())
+        getEdit()
+        removeMedia()
+    })
+
+    document.querySelector("#filtrer-movie").addEventListener("click", ()=>{
+        buildProductsList(filterMovie())
+        getEdit()
+        removeMedia()
+    })
+
     document.querySelector("#add-contenu-btn").addEventListener("click", ()=>{
         let title = document.querySelector("#add-title").value
         let releaseDate = document.querySelector("#add-date").value
@@ -324,14 +348,5 @@ let init = function (){
 export default {
     medias: medias,
     init: init,
-    filterAll: filterAll,
-    getEdit: getEdit,
-    filterAlbum: filterAlbum,
-    filterGame: filterGame,
-    filterMovie: filterMovie,
-    filterCollection: filterCollection,
-    getForm: getForm,
-    removeMedia: removeMedia,
-    buildProductsList: buildProductsList,
 }
 
