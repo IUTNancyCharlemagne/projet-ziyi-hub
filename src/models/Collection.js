@@ -3,7 +3,9 @@ import Movie from "./Movie.js";
 import Game from "./Game.js";
 import Album from "./Album.js";
 
-const media1 = new Album("Organize office", "2021-10-28", 5, "http://placeimg.com/250/250/tech", "Paul", 5)
+//https://placeimg.com/250/250/nature
+
+const media1 = new Album("White day", "2021-10-28", 5, "https://i.scdn.co/image/ab67616d0000b273372ff8c142ed226c20bb5e26", "Cotton Candy", 5)
 const media2 = new Game("Outlast:Whistleblower", "2013-05-07", 3, "https://image.api.playstation.com/cdn/EP4467/CUSA00409_00/NSTpvqNs6vZqdNmm2uLtKYSSkX3n81mF.png?w=250", "studio", 2, "Se cacher dans l'ombre, ou dans divers éléments du décor pour échapper à ses poursuivants.")
 const media3 = new Movie("Resident Evil 7", "2016-07-24", 4, "https://fr.web.img2.acsta.net/c_310_420/pictures/16/11/24/15/35/032101.jpg", "Capcom", "Milla Jovovich", "1:40:37", "In September 1998, Raccoon City becomes overrun with zombies after the T-virus contaminates its water supply, infecting much of its population.")
 
