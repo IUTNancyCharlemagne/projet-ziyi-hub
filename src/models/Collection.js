@@ -22,18 +22,18 @@ let displayMedia = function (media){
             </div>
             <div class="details">
                 <div class="details-top">
-                    <strong class="bigger" data-type="title">${media.title}</strong>
-                    <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
+                    <strong class="bigger" data-type=${media.title}>${media.title}</strong>
+                    <div data-type=${media.releaseDate}>Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
                 <div class="details-description details-plot">
                     ${media.plot}
                 </div>
-                <div class="details-description details-rating">
-                    Rating: ${media.rating}
+                <div class="details-description details-rating">` +
+                    rating(media.rating) +  `
                 </div>
                 <div class="details-button">
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-remove">Remove</button>
+                    <button class="btn btn-dark btn-edit">Edit</button>
+                    <button class="btn btn-success btn-remove">Remove</button>
                 </div>
             </div>
         </div>
@@ -46,23 +46,43 @@ let displayMedia = function (media){
             </div>
             <div class="details">
                 <div class="details-top">
-                    <strong class="bigger" data-type="title">${media.title}</strong>
-                    <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
+                    <strong class="bigger" data-type=${media.title}>${media.title}</strong>
+                    <div data-type=${media.releaseDate}>Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
                 <div class="details-description details-plot">
                     By ${media.artists}, contains ${media.nbTracks} tracks.
                 </div>
-                <div class="details-description details-rating">
-                    Rating: ${media.rating}
-                </div>
+                <div class="details-description details-rating">` +
+                    rating(media.rating)
+            +  `</div>
                 <div class="details-button">
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-remove">Remove</button>
+                    <button class="btn btn-dark btn-edit">Edit</button>
+                    <button class="btn btn-success btn-remove">Remove</button>
                 </div>
             </div>
         </div>
     `
     }
+}
+
+
+let rating = function (rating){
+    let res = `
+    <div class="star">
+    <label for="rating"><b>Rating</b></label>
+    `
+    for (let i = 0; i < rating; i++){
+        res += `
+        <span class="fa fa-star checked"></span>
+        `
+    }
+    for (let i = 0; i < 5-rating; i++){
+        res += `
+        <span class="fa fa-star"></span>
+        `
+    }
+    res += `</div>`
+    return res
 }
 
 
@@ -142,18 +162,18 @@ let addMedia = function (media){
             </div>
             <div class="details">
                 <div class="details-top">
-                    <strong class="bigger" data-type="title">${media.title}</strong>
-                    <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
+                    <strong class="bigger" data-type=${media.title}>${media.title}</strong>
+                    <div data-type=${media.releaseDate}>Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
                 <div class="details-description details-plot">
                 ${media.plot}
                 </div>
-                <div class="details-description details-rating">
-                    Rating: ${media.rating}
+                <div class="details-description details-rating">` +
+                    rating(media.rating) +`
                 </div>
                 <div class="details-button">
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-remove">Remove</button>
+                    <button class="btn btn-dark btn-edit">Edit</button>
+                    <button class="btn btn-success btn-remove">Remove</button>
                 </div>
             </div>
         </div>
@@ -166,18 +186,18 @@ let addMedia = function (media){
             </div>
             <div class="details">
                 <div class="details-top">
-                    <strong class="bigger" data-type="title">${media.title}</strong>
-                    <div data-type="releaseDate">Released the ${media.releaseDate}, 12:00:00 AM</div>
+                    <strong class="bigger" data-type=${media.title}>${media.title}</strong>
+                    <div data-type=${media.releaseDate}>Released the ${media.releaseDate}, 12:00:00 AM</div>
                 </div>
                 <div class="details-description details-plot">
                 By ${media.artists}, contains ${media.nbTracks} tracks.
                 </div>
-                <div class="details-description details-rating">
-                    Rating: ${media.rating}
+                <div class="details-description details-rating">` +
+                    rating(media.rating) +`
                 </div>
                 <div class="details-button">
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-remove">Remove</button>
+                    <button class="btn btn-dark btn-edit">Edit</button>
+                    <button class="btn btn-success btn-remove">Remove</button>
                 </div>
             </div>
         </div>

@@ -82,8 +82,13 @@ main {
     text-align: justify;
 }
 
+.checked{
+    color: orange;
+}
+
 .mdi-magnify{
-    max-height: 45px;
+    /*max-height: 45px;*/
+    height: fit-content;
 }
 
 #product-list{
