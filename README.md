@@ -4,37 +4,42 @@
     <strong>
         Fonctionnalités principales
     </strong>
-    <ol>
+    <div>
         <li>Afficher une liste de médias (inclus localStorage)</li>
         <li>Ajouter un média (inclus localStorage)</li>
         <li>Supprimer un média</li>
         <li>Compter le nombre total de média existant</li>
         <li>Filtrer l’affichage par type de média (type inclus All, Albums, Games, Movies)</li>
-    </ol>
+    </div>
     <strong>
         Fonctionnalités bonus
     </strong>
-    <ol>
+    <div>
         <li>Trier la collection par type titre ou date de sortie</li>
         <li>Enregistrer et récupérer la collection en local</li>
-    </ol>
+    </div>
     <strong>
         Tests
     </strong>
-    <ol>
+    <div>
         <li>
             Sous répertoire <code>test/models</code> Tapez la commande <code>npm test</code> ou <code>npx ava</code> sur terminal pour tester des fonctionnalités.
         </li>
-    </ol>
+    </div>
+    <strong>Attention, Avant de tester l'application, veuillez effacer votre localStorage</strong>
 
 
 <h1>Choix esthétiques</h1>
-<ol>
+<div>
     <li>L'interface dynamique</li>
     <li>Les constrastes textes et fonds</li>
     <li>Le clic et hover sont réactifs</li>
     <li>Le CDN sur Bootstrap pour améliorer les performances</li>
-</ol>
+</div>
 
 <h1>Compatibilité</h1>
-L'application est compatible sur le navigateur Google Chrome, Opera et Safari.
+<div>
+    <li>
+        L'application est compatible sur le navigateur Google Chrome, Opera et Safari.
+    </li>
+</div>
