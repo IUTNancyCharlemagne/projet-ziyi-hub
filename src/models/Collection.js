@@ -3,7 +3,7 @@ import Movie from "./Movie.js";
 import Game from "./Game.js";
 import Album from "./Album.js";
 
-//https://placeimg.com/250/250/nature
+
 /**
  * il permet de créer plusieurs types de médias
  * @type {Album}
@@ -430,6 +430,7 @@ let init = function (){
             let plot = document.querySelector("#add-plot").value
             let game = new Game(title, releaseDate, rating, image, studio, nbPlayers, plot)
             addMedia(game)
+            alert("Ajout réussie")
 
         }else if (option === "option-movie"){
             let director = document.querySelector("#add-director").value
@@ -438,12 +439,14 @@ let init = function (){
             let p = document.querySelector("#add-movie-plot").value
             let movie = new Movie(title, releaseDate, rating, image, director, actors, duration, p)
             addMedia(movie)
+            alert("Ajout réussie")
 
         }else if (option === "option-album"){
             let artists = document.querySelector("#add-artists").value
             let nbTracks = document.querySelector("#add-nbTracks").value
             let album = new Album(title, releaseDate, rating, image, artists, nbTracks)
             addMedia(album)
+            alert("Ajout réussie")
         }
     })
 }

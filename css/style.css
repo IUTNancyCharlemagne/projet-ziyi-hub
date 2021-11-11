@@ -114,7 +114,7 @@ main {
 }
 
 .nbMedia{
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 .product-add2cart:hover{
@@ -123,6 +123,11 @@ main {
 
 .details-plot{
     border-bottom: 1px solid #efeeee;
+}
+
+.add-general > p:nth-last-child(1) > span{
+    color: #bbb;
+    padding: 0 10%;
 }
 
 #window-edit, #window-add{
