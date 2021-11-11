@@ -23,9 +23,9 @@ test('Collection.filterAll().length = 3', t => {
 /**
  * test3 unitaire de filterAlbum
  */
-test('Collection.filterAlbum()[0] = {"Organize office", "2021-10-28", 5, "http://placeimg.com/250/250/tech", "Paul", 5}', t => {
+test('Collection.filterAlbum()[0] = {"White day", "2021-10-28", 5, "https://i.scdn.co/image/ab67616d0000b273372ff8c142ed226c20bb5e26", "Cotton Candy", 5}', t => {
     t.is(Collection.filterAlbum().length, 1);
-    t.deepEqual(Collection.filterAlbum()[0], new Album("Organize office", "2021-10-28", 5, "http://placeimg.com/250/250/tech", "Paul", 5), "identiques");
+    t.deepEqual(Collection.filterAlbum()[0], new Album("White day", "2021-10-28", 5, "https://i.scdn.co/image/ab67616d0000b273372ff8c142ed226c20bb5e26", "Cotton Candy", 5), "identiques");
 });
 
 /**
