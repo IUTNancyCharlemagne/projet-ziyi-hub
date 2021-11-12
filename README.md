@@ -26,7 +26,7 @@
             Sous répertoire <code>test/models</code> Tapez la commande <code>npm test</code> ou <code>npx ava</code> sur terminal pour tester des fonctionnalités.
         </li>
     </div>
-    <strong>Attention, Avant de tester l'application, veuillez effacer votre localStorage</strong>
+    <strong>Attention, Avant de tester l'application, veuillez effacer votre localStorage, et vous devez tester sur votre localhost</strong>
 
 
 <h1>Choix esthétiques</h1>
